@@ -1,4 +1,4 @@
-# Status Report (~1500-2000 words)
+# Status Report (~1000-1500 words)
 
 ## Task Updates
 An update on each of the tasks described on your project plan including references to specific artifacts in your repository (such as datasets, scripts, workflows, workflow diagrams, etc). → You should include anything you have been working on so far; it doesn't need to be polished, but you should have some code or similar artifacts in the repository, such as datasets, scripts, workflows, workflow diagrams, etc., to support your status updates and demonstrate tangible progress.
@@ -50,4 +50,5 @@ Originally we planed on integrating on year or location using latitude and longi
 
 ## Contributions
 Each team member has to write a short summary of their contributions to the current milestone. Each team member should add and commit their contribution summary themselves to the shared github repo.
+My contribution (Amritha) for this checkpoint was to start the analysis and create visualizations to understand our dataset better. This included creating visualizations to show the distribution of safety scores and academic performance by school type (ES, MS, HS) and the relationship between average student attendance and ward crime count. Creating this relationship was important to directly address the attendance portion of our first research question. Additionally, I started the statistical analysis, including the OLS regression to predict safety from crime to quantify the strength of the relationships and analyzing the grouped correlation table to see if the crime/safety correlation is significantly different across school types. In the next weeks, I plan to create more visualizations and conduct deeper analysis to find underlying patterns/relationships within both datasets.
 
