@@ -11,7 +11,7 @@ Data Cleaning and basic profiling: We examined the dataset to see what columns a
 
 Data Integration: We aggregated the Chicago crime data by Ward to calculate total Crime_Count per Ward. We then merged the aggregated crime dataset with the cleaned school dataset using the Ward column. Finally, we verfied the merged dataset for integrity by looking at consistency with our original data and row counts. 
 
-Data Visualization: We generated several plots and visualizations to explore initial relationships, saved within the reports/ folder. This includes a count plot of the Top 10 Primary Crime Types to characterize the local crime environment. We created box plots to compare the distribution of safety scores and reading performance across elementary, middle, and high Schools. Finally, we generated a scatterplot showing the relationship between ward crime count and average student attendance, categorized by school type.
+Data Visualization: We generated several plots and visualizations to explore initial relationships, saved within the reports/ folder. This includes a count plot of the Top 10 Primary Crime Types to characterize the local crime environment. We created box plots to compare the distribution of safety scores and reading performance across elementary, middle, and high Schools. Finally, we generated a scatterplot showing the relationship between ward crime count and average student attendance, categorized by school type. Creating these visualizations are important to allow others to easily understand our analysis and the underlying patterns of the dataset.
 
 Data Analysis: We completed the initial statistical analysis to quantify the relationships. We ran an OLS regression using crime countsto predict safety score, finding a statistically significant negative coefficient (~ -0.0025$), meaning higher crime is linked to lower safety scores. We computed the overall correlation between crime count and average student attendance (~ -0.426). We also computed a grouped correlation table (code available in notebooks/) to see how the crime/safety relationship varies by school type, finding that the negative correlation is generally strongest for High Schools.
 
@@ -34,7 +34,7 @@ An updated timeline indicating the status of each task and when they will be com
   * artifacts/code to include: raw datasets, notebook with data loading, cleaning, missing value checks basic profiling, etc. (completed)
 * **Week 5-6:** Integration (by location & year, handle mismatched schemas) → Isha (completed)
   * artifacts/code to include: Integrated dataset (save cleaned and then integrated dataset), notebook with mapping and joining schema
-* **Week 7-8:** Former analysis, first visualizations (scatter plots, bar charts, maps) → Amritha
+* **Week 7-8:** Former analysis, first visualizations (scatter plots, bar charts, maps) → Amritha (in progress)
   * artifacts/code to include: notebook with anaylsis and visualization including summary statistics, bar charts, scatter plots, correlation tables, notes about trends in markdown, etc
 * **Week 8-9:** Automate workflow (python scripts), test reproducibility → Isha 
   * artifacts/code to include: add python scripts (.py) underneath script folder
