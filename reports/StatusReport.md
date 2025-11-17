@@ -20,11 +20,12 @@ Data Analysis: We completed the initial statistical analysis to quantify the rel
 
 Artifacts: 
 * notebooks/data_cleaning_and_integration.ipynb (initial loading, summary statistics, cleaning, and integration of datasets.
-* notebooks/
+* notebooks/data_visualizations_and_analysis
 * data/chicago_schools.csv (raw dataset for Chicago schools from 2011-2012)
 
-Automation & Python Scripts: Converted cleaning and integration steps into Python scripts for reproducibility. The scripts include reading the raw datasets in, cleaning, merging
-Artifacts: scripts/
+Analysis and Visualizations: To support reproducibility and avoid repeated manual notebook execution, we translated the cleaning and integration steps into Python scripts. These scripts allow any team member or reviewer to replicate the workflow programmatically without needing to run the Jupyter notebook which will be working with during our next steps of the project. 
+* scripts/clean_data.py (reads raw datasets, cleans columns, handles missing values, and outputs schools_cleaned.csv and crime_cleaned.csv)
+* scripts/integrate_data.py (reads the cleaned datasets, aggregates crime by Ward, merges with school data, and outputs merged_school_crime.csv)
 
 ## Timeline	
 * **Week 3-4:** Data cleaning, profiling, initial exploration, check inconsistencies → Isha (completed)
@@ -39,7 +40,7 @@ Artifacts: scripts/
 * **Week 9-10:** final touches, polish write ups/docs, checking for reproducibility → both
 * **Week 11-12:** Submit (Github release, status report updates, and final README) → both
 
-Next steps include furthering the analysis if necessary, aligning all notebooks such as the visualization and analysis with the cleaned and processed datasets, automating the workflow using the Python scripts, verifying that the scripts reproduce the exact cleaned and merged datasets, and expanding the analysis with additional visualizations and statistical tests.
+Next steps include furthering analysis if it seems necessary, automating the workflow using the Python scripts, verifying that the scripts reproduce the exact cleaned and merged datasets, and expanding the analysis with additional visualizations and statistical tests.
 
 ## Changes
 Originally, we planned to integrate datasets using location coordinates (latitude/longitude) or year. During implementation, we discovered that both datasets contained a common Ward column, which provided a more reliable and consistent method for merging for the datasets. Feedback from Milestone 2 also requested that we review dataset licensing. Upon review of the Chicago Data Portal, we confirmed that both the Chicago Schools dataset and the Chicago Crime dataset are subject to the Chicago Data Portal Terms of Use, which allow use of the datasets for research, education, and non commercial purposes. By following these terms, we ensured that our work complies with licensing requirements. Additionally, the original crime dataset was too large to include entirely so we created a subset for 2011–2012 for processing and reproducibility.
@@ -50,4 +51,3 @@ Contributions for this milestone focused on data cleaning, integration, and auto
 
 Amritha:
 Contributions for this checkpoint was to start the analysis and create visualizations to understand our dataset better. This included creating visualizations to show the distribution of safety scores and academic performance by school type (ES, MS, HS) and the relationship between average student attendance and ward crime count. Creating this relationship was important to directly address the attendance portion of our first research question. Additionally, I started the statistical analysis, including the OLS regression to predict safety from crime to quantify the strength of the relationships and analyzing the grouped correlation table to see if the crime/safety correlation is significantly different across school types. In the next weeks, I plan to create more visualizations and conduct deeper analysis to find underlying patterns/relationships within both datasets.
-
