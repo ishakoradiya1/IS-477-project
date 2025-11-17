@@ -16,10 +16,10 @@ Data Visualization: We generated several plots and visualizations to explore ini
 Data Analysis: We completed the initial statistical analysis to quantify the relationships. We ran an OLS regression using crime countsto predict safety score, finding a statistically significant negative coefficient (~ -0.0025$), meaning higher crime is linked to lower safety scores. We computed the overall correlation between crime count and average student attendance (~ -0.426). We also computed a grouped correlation table (code available in notebooks/) to see how the crime/safety relationship varies by school type, finding that the negative correlation is generally strongest for High Schools.
 
 Artifacts: 
-* notebooks/data_cleaning_and_integration.ipynb (initial loading, summary statistics, cleaning, and integration of datasets.
-* notebooks/
+* notebooks/data_cleaning_and_integration.ipynb (initial loading, summary statistics, cleaning, and integration of datasets.)
+* notebooks/data_visualizations_and_analysis.ipynb
 * data/chicago_schools.csv (raw dataset for Chicago schools from 2011-2012)
-* NOTE TO SELF: commit crimes dataset (subset - too large right now, also add saving processing dataset in notebook)
+* data/crime_2011.csv (raw dataset for Chicago crime records from 2011-2012)
 
 Analysis and Visualizations: 
 
