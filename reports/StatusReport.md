@@ -1,15 +1,18 @@
-# Status Report (~1000-1500 words)
+# Status Report
 
 ## Task Updates
-An update on each of the tasks described on your project plan including references to specific artifacts in your repository (such as datasets, scripts, workflows, workflow diagrams, etc). → You should include anything you have been working on so far; it doesn't need to be polished, but you should have some code or similar artifacts in the repository, such as datasets, scripts, workflows, workflow diagrams, etc., to support your status updates and demonstrate tangible progress.
+Our team started by downloading the Chicago Schools dataset (2011–2012) and the Chicago Crime dataset (2011–present). Upon reviewing the data, we found that the crime dataset was extremely large, including multiple years beyond the scope of our analysis, and could not be fully uploaded to GitHub due to size limitations. We resolved this by creating a subset of the crime data limited to 2011–2012 and relevant columns (Year, Primary Type, Ward, Latitude, Longitude). This ensures we focus on the period consistent with the school dataset while keeping the repository manageable.
 
-note to self: commit crimes dataset (subset - too large right now)
+We also verified data integrity by checking file formats, reviewing column types, and confirming that the datasets contained the expected number of rows and columns. Licensing was reviewed to ensure that the datasets were publicly available for research and educational purposes. Both datasets are publicly hosted by the City of Chicago and are under an open data license allowing for non-commercial use. This review ensures compliance with data usage requirements. Also, we established a clear folder structure in our repository for organization and reproducibility:
 
-Data Collection and Repo Setup: We downloaded and collected the Chicago Schools and Chicago Crime datasets. Then we verfied formats, ensured overall data integrity, reviewed licensing. Following, we found that the Chicago Crime dataset included crimes from 2011-present which meant the dataset was too large. Our Chicago School dataset is from 2011-2012 so we chose to download a subset of the crime dataset from 2011-2012. Additionally we added folder structure to our Github repository including notebooks/, data/, scripts/, and reports/.
+* notebooks/ for exploratory analysis and initial cleaning scripts
+* data/ for raw, processed, and integrated datasets
+* scripts/ for automation scripts (.py files)
+* reports/ for figures, visualizations, and markdown summaries
 
-Data Cleaning and basic profiling: We examined the dataset to see what columns are available and the data type for each column. Then we performed missing value analysis, renamed columns for consistency, and focused on a subset of columns as the origina Chicago Schools dataset has 40+ columns. 
+Data Cleaning and basic profiling: We examined the dataset to see what columns are available and the data type for each column. Then we performed missing value analysis, renamed columns for consistency, and focused on a subset of columns as the original Chicago Schools dataset has 40+ columns. We narrowed our focus to key columns relevant to safety, attendance, and academic performance. Column names were standardized for consistency (spaces replaced with underscores, % replaced with Percent). For the crime dataset, we filtered for crimes in 2011, removed duplicates, and kept only relevant columns (Primary Type, Ward, Latitude, Longitude). This subset became crime_cleaned.csv. Then we did some basic profiling which included value counts for categorical variables and summary statistics for numeric variables. This step allowed us to detect any inconsistencies and prepare the datasets for integration.
 
-Data Integration: We aggregated the Chicago crime data by Ward to calculate total Crime_Count per Ward. We then merged the aggregated crime dataset with the cleaned school dataset using the Ward column. Finally, we verfied the merged dataset for integrity by looking at consistency with our original data and row counts. 
+Data Integration: To combine the datasets, we aggregated the crime data by Ward to calculate total Crime_Count per Ward. We then merged this aggregated crime dataset with the cleaned school dataset using the Ward column, creating merged_school_crime.csv. This approach ensured alignment between school locations and crime statistics while maintaining consistency across datasets. We verified the merged dataset by checking row counts and basic summary statistics to confirm that all schools were correctly matched with their corresponding crime counts. The integration process was documented in notebooks/data_cleaning_and_integration.ipynb and later automated in Python scripts (scripts/clean_data.py and scripts/integrate_data.py). These scripts read the raw datasets, clean them, and produce the integrated dataset programmatically, supporting reproducibility.
 
 Data Visualization: We generated several plots and visualizations to explore initial relationships, saved within the reports/ folder. This includes a count plot of the Top 10 Primary Crime Types to characterize the local crime environment. We created box plots to compare the distribution of safety scores and reading performance across elementary, middle, and high Schools. Finally, we generated a scatterplot showing the relationship between ward crime count and average student attendance, categorized by school type. Creating these visualizations are important to allow others to easily understand our analysis and the underlying patterns of the dataset.
 
@@ -17,24 +20,19 @@ Data Analysis: We completed the initial statistical analysis to quantify the rel
 
 Artifacts: 
 * notebooks/data_cleaning_and_integration.ipynb (initial loading, summary statistics, cleaning, and integration of datasets.
-* notebooks/
+* notebooks/data_visualizations_and_analysis
 * data/chicago_schools.csv (raw dataset for Chicago schools from 2011-2012)
-* NOTE TO SELF: commit crimes dataset (subset - too large right now, also add saving processing dataset in notebook)
 
-Analysis and Visualizations: 
-
-Automation & Python Scripts: Converted cleaning and integration steps into Python scripts for reproducibility. The scripts include reading the raw datasets in, cleaning, merging
-Artifacts: scripts/
-NOTE TO SELF: need to add this
+Analysis and Visualizations: To support reproducibility and avoid repeated manual notebook execution, we translated the cleaning and integration steps into Python scripts. These scripts allow any team member or reviewer to replicate the workflow programmatically without needing to run the Jupyter notebook which will be working with during our next steps of the project. 
+* scripts/clean_data.py (reads raw datasets, cleans columns, handles missing values, and outputs schools_cleaned.csv and crime_cleaned.csv)
+* scripts/integrate_data.py (reads the cleaned datasets, aggregates crime by Ward, merges with school data, and outputs merged_school_crime.csv)
 
 ## Timeline	
-An updated timeline indicating the status of each task and when they will be completed (talk about next steps)
-
 * **Week 3-4:** Data cleaning, profiling, initial exploration, check inconsistencies → Isha (completed)
   * artifacts/code to include: raw datasets, notebook with data loading, cleaning, missing value checks basic profiling, etc. (completed)
 * **Week 5-6:** Integration (by location & year, handle mismatched schemas) → Isha (completed)
   * artifacts/code to include: Integrated dataset (save cleaned and then integrated dataset), notebook with mapping and joining schema
-* **Week 7-8:** Former analysis, first visualizations (scatter plots, bar charts, maps) → Amritha (in progress)
+* **Week 7-8:** Former analysis, first visualizations (scatter plots, bar charts, maps) → Amritha (completed)
   * artifacts/code to include: notebook with anaylsis and visualization including summary statistics, bar charts, scatter plots, correlation tables, notes about trends in markdown, etc
 * **Week 8-9:** Automate workflow (python scripts), test reproducibility → Isha 
   * artifacts/code to include: add python scripts (.py) underneath script folder
@@ -42,13 +40,15 @@ An updated timeline indicating the status of each task and when they will be com
 * **Week 9-10:** final touches, polish write ups/docs, checking for reproducibility → both
 * **Week 11-12:** Submit (Github release, status report updates, and final README) → both
 
-## Changes
-A description of any changes to your project plan itself, in particular about your progress so far. Also include changes you made to your plan based on feedback you may have received for Milestone 2.
+Next steps include furthering analysis if it seems necessary, automating the workflow using the Python scripts, verifying that the scripts reproduce the exact cleaned and merged datasets, and expanding the analysis with additional visualizations and statistical tests.
 
-Originally we planed on integrating on year or location using latitude and longitude. However, we noticed a common column of Ward in both datasets and merged using that to maintain consistency. Feedback we had gotten from our Milestone 2 was to review the licenses/terms of use and review that the dataset met the integration requirements. We found that it ____.
-~feedback --> fix licensing explanation part for dataset explaination
+## Changes
+Originally, we planned to integrate datasets using location coordinates (latitude/longitude) or year. During implementation, we discovered that both datasets contained a common Ward column, which provided a more reliable and consistent method for merging for the datasets. Feedback from Milestone 2 also requested that we review dataset licensing. Upon review of the Chicago Data Portal, we confirmed that both the Chicago Schools dataset and the Chicago Crime dataset are subject to the Chicago Data Portal Terms of Use, which allow use of the datasets for research, education, and non commercial purposes. By following these terms, we ensured that our work complies with licensing requirements. Additionally, the original crime dataset was too large to include entirely so we created a subset for 2011–2012 for processing and reproducibility.
 
 ## Contributions
-Each team member has to write a short summary of their contributions to the current milestone. Each team member should add and commit their contribution summary themselves to the shared github repo.
-My contribution (Amritha) for this checkpoint was to start the analysis and create visualizations to understand our dataset better. This included creating visualizations to show the distribution of safety scores and academic performance by school type (ES, MS, HS) and the relationship between average student attendance and ward crime count. Creating this relationship was important to directly address the attendance portion of our first research question. Additionally, I started the statistical analysis, including the OLS regression to predict safety from crime to quantify the strength of the relationships and analyzing the grouped correlation table to see if the crime/safety correlation is significantly different across school types. In the next weeks, I plan to create more visualizations and conduct deeper analysis to find underlying patterns/relationships within both datasets.
+Isha:
+Contributions for this milestone focused on data cleaning, integration, and automation. I examined both the Chicago Schools and Crime datasets, performing missing value analysis, renaming columns for consistency, and focusing on relevant subsets of columns. I then aggregated crime data by Ward and merged it with the cleaned school dataset to create an integrated dataset for analysis. To support reproducibility for future steps, I converted these steps into Python scripts (clean_data.py and integrate_data.py), which reads the raw datasets, cleans and processes them, and generates the merged dataset automatically. I also verified dataset integrity and documented the cleaning and integration workflow in the repository.
+
+Amritha:
+Contributions for this checkpoint was to start the analysis and create visualizations to understand our dataset better. This included creating visualizations to show the distribution of safety scores and academic performance by school type (ES, MS, HS) and the relationship between average student attendance and ward crime count. Creating this relationship was important to directly address the attendance portion of our first research question. Additionally, I started the statistical analysis, including the OLS regression to predict safety from crime to quantify the strength of the relationships and analyzing the grouped correlation table to see if the crime/safety correlation is significantly different across school types. In the next weeks, I plan to create more visualizations and conduct deeper analysis to find underlying patterns/relationships within both datasets.
 
