@@ -24,8 +24,6 @@ Artifacts:
 * data/chicago_schools.csv (raw dataset for Chicago schools from 2011-2012)
 * NOTE TO SELF: commit crimes dataset (subset - too large right now, also add saving processing dataset in notebook)
 
-Analysis and Visualizations: 
-
 Automation & Python Scripts: Converted cleaning and integration steps into Python scripts for reproducibility. The scripts include reading the raw datasets in, cleaning, merging
 Artifacts: scripts/
 NOTE TO SELF: need to add this
