@@ -22,11 +22,9 @@ Artifacts:
 * notebooks/data_cleaning_and_integration.ipynb (initial loading, summary statistics, cleaning, and integration of datasets.
 * notebooks/
 * data/chicago_schools.csv (raw dataset for Chicago schools from 2011-2012)
-* NOTE TO SELF: commit crimes dataset (subset - too large right now, also add saving processing dataset in notebook)
 
 Automation & Python Scripts: Converted cleaning and integration steps into Python scripts for reproducibility. The scripts include reading the raw datasets in, cleaning, merging
 Artifacts: scripts/
-NOTE TO SELF: need to add this
 
 ## Timeline	
 * **Week 3-4:** Data cleaning, profiling, initial exploration, check inconsistencies → Isha (completed)
