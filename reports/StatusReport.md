@@ -43,7 +43,7 @@ NOTE TO SELF: need to add this
 * **Week 9-10:** final touches, polish write ups/docs, checking for reproducibility → both
 * **Week 11-12:** Submit (Github release, status report updates, and final README) → both
 
-Next steps include furthering analysis if it seems necessary, automating the workflow using the Python scripts, verifying that the scripts reproduce the exact cleaned and merged datasets, and expanding the analysis with additional visualizations and statistical tests.
+Next steps include furthering the analysis if necessary, aligning all notebooks such as the visualization and analysis with the cleaned and processed datasets, automating the workflow using the Python scripts, verifying that the scripts reproduce the exact cleaned and merged datasets, and expanding the analysis with additional visualizations and statistical tests.
 
 ## Changes
 Originally, we planned to integrate datasets using location coordinates (latitude/longitude) or year. During implementation, we discovered that both datasets contained a common Ward column, which provided a more reliable and consistent method for merging for the datasets. Feedback from Milestone 2 also requested that we review dataset licensing. Upon review of the Chicago Data Portal, we confirmed that both the Chicago Schools dataset and the Chicago Crime dataset are subject to the Chicago Data Portal Terms of Use, which allow use of the datasets for research, education, and non commercial purposes. By following these terms, we ensured that our work complies with licensing requirements. Additionally, the original crime dataset was too large to include entirely so we created a subset for 2011–2012 for processing and reproducibility.
