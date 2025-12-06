@@ -12,3 +12,12 @@ In your project repository, create a file named README.md (or use the existing f
 * References: Formatted citations for any papers, datasets, or software used in your project.
 
 Box link to output data: https://uofi.box.com/s/56t7ofh4sb2nhkaifiojl3k1q9zkqd39
+
+Last things to add:
+Licenses for data and software created as part of your project
+
+Final artifact to add:
+Metadata and data documentation 
+Data dictionary or codebook as text file, PDF, or self-describing data formats.
+Descriptive metadata describing your project in conformance with a standard such as DataCite, Schema.org.
+
