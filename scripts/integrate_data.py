@@ -9,9 +9,9 @@ import os
 - Ensures consistent formatting of columns and removes duplicates.
 
 """
-def merge_datasets(schools_path="../data/processed/schools_cleaned.csv",
-                   crime_path="../data/processed/crime_cleaned.csv",
-                   output_path="../data/processed/merged_school_crime.csv"):
+def merge_datasets(schools_path="data/processed/schools_cleaned.csv",
+                   crime_path="data/processed/crime_cleaned.csv",
+                   output_path="data/processed/merged_school_crime.csv"):
     """
     Integrates cleaned school and crime datasets.
     Steps:

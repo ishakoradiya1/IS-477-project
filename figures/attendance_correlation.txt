@@ -1,0 +1,1 @@
+Correlation between attendance and crime count: -0.426

@@ -4,13 +4,13 @@ import seaborn as sns
 import statsmodels.api as sm
 import os
 
-FIG_DIR = "../figures"
+FIG_DIR = "figures"
 os.makedirs(FIG_DIR, exist_ok=True)
 
 def main():
-    schools_cleaned = pd.read_csv("../data/processed/schools_cleaned.csv")
-    crime_cleaned = pd.read_csv("../data/processed/crime_cleaned.csv")
-    merged = pd.read_csv("../data/processed/merged_school_crime.csv")
+    schools_cleaned = pd.read_csv("data/processed/schools_cleaned.csv")
+    crime_cleaned = pd.read_csv("data/processed/crime_cleaned.csv")
+    merged = pd.read_csv("data/processed/merged_school_crime.csv")
 
     # 1. Top 10 Crime Types
     top_crime = crime_cleaned['Crime_Type'].value_counts().nlargest(10).index
@@ -27,7 +27,7 @@ def main():
 
 
     # 2. Boxplots by School Type
-    merged = merged.rename(columns={'Elementary,_Middle,_or_High_School': 'School_Type'})
+    merged = merged.rename(columns={'Elementary_Middle_or_High_School': 'School_Type'})
 
     # Safety Score Boxplot
     plt.figure(figsize=(6, 4))

@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-def clean_schools(input_path="../data/raw/chicago_schools.csv",
-                  output_path="../data/processed/schools_cleaned.csv"):
+def clean_schools(input_path="data/raw/chicago_schools.csv",
+                  output_path="data/processed/schools_cleaned.csv"):
     """
     Cleans the Chicago schools dataset.
     Steps:
@@ -43,8 +43,8 @@ def clean_schools(input_path="../data/raw/chicago_schools.csv",
     return df_cleaned
 
 
-def clean_crime(input_path="../data/raw/crimes_2011.csv",
-                output_path="../data/processed/crime_cleaned.csv"):
+def clean_crime(input_path="data/raw/crimes_2011.csv",
+                output_path="data/processed/crime_cleaned.csv"):
     """
     Cleans the Chicago crime dataset.
     Steps:

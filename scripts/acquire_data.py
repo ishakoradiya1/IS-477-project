@@ -7,18 +7,17 @@ import os
 # Data Acquisition 
 
 Datasets were downloaded from the Chicago Open Data Portal:
-- Schools: [link]
-- Crimes: [link]
+- Schools: https://data.cityofchicago.org/api/views/9xs2-f89t/rows.csv?accessType=DOWNLOAD
+- Crimes: https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?where=year%20=%202011
 
 To acquire the data programmatically:
 1. Run `scripts/acquire_data.py`
 2. Verify SHA-256 checksums printed after download.
-
-Checksum ensures that the files were not corrupted or modified.
 """
-# URLS are from Chicago Data Portal
+
+# URLs from Chicago Data Portal
 school_data_url = "https://data.cityofchicago.org/api/views/9xs2-f89t/rows.csv?accessType=DOWNLOAD"
-crime_data_url = "https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?accessType=DOWNLOAD"
+crime_data_url = "https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?where=year%20=%202011"
 
 RAW_DIR = "data/raw"
 os.makedirs(RAW_DIR, exist_ok=True)
@@ -42,11 +41,28 @@ def sha256_checksum(path):
             sha.update(chunk)
     return sha.hexdigest()
 
-if __name__ == "__main__":
-    school_path = download(school_data_url, "chicago_schools.csv")
-    crime_path = download(crime_data_url, "crimes_2011.csv")
 
+def main():
+    school_path = os.path.join(RAW_DIR, "chicago_schools.csv")
+    crime_path = os.path.join(RAW_DIR, "crimes_2011.csv")
+
+    # Download only if files do not already exist
+    if not os.path.exists(school_path):
+        school_path = download(school_data_url, "chicago_schools.csv")
+    else:
+        print("chicago_schools.csv already exists — skipping download.")
+
+    if not os.path.exists(crime_path):
+        crime_path = download(crime_data_url, "crimes_2011.csv")
+    else:
+        print("crimes_2011.csv already exists — skipping download.")
 
     with open("checksums.txt", "w") as f:
-        f.write(f"schools.csv: {sha256_checksum(school_path)}\n")
-        f.write(f"crime.csv: {sha256_checksum(crime_path)}\n")
+        f.write(f"chicago_schools.csv: {sha256_checksum(school_path)}\n")
+        f.write(f"crimes_2011.csv: {sha256_checksum(crime_path)}\n")
+
+    print("\nChecksums saved to checksums.txt")
+
+
+if __name__ == "__main__":
+    main()
