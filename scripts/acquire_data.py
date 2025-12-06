@@ -50,12 +50,12 @@ def main():
     if not os.path.exists(school_path):
         school_path = download(school_data_url, "chicago_schools.csv")
     else:
-        print("chicago_schools.csv already exists — skipping download.")
+        print("chicago_schools.csv already exists")
 
     if not os.path.exists(crime_path):
         crime_path = download(crime_data_url, "crimes_2011.csv")
     else:
-        print("crimes_2011.csv already exists — skipping download.")
+        print("crimes_2011.csv already exists")
 
     with open("checksums.txt", "w") as f:
         f.write(f"chicago_schools.csv: {sha256_checksum(school_path)}\n")
