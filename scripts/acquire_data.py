@@ -43,8 +43,9 @@ def sha256_checksum(path):
     return sha.hexdigest()
 
 if __name__ == "__main__":
-    school_path = download(school_data_url, "schools.csv")
-    crime_path = download(crime_data_url, "crime.csv")
+    school_path = download(school_data_url, "chicago_schools.csv")
+    crime_path = download(crime_data_url, "crimes_2011.csv")
+
 
     with open("checksums.txt", "w") as f:
         f.write(f"schools.csv: {sha256_checksum(school_path)}\n")

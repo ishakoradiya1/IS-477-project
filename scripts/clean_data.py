@@ -17,13 +17,13 @@ def clean_schools(input_path="../data/raw/chicago_schools.csv",
     cols = [
         'School ID', 'Name of School', 'Elementary, Middle, or High School',
         'Safety Score', 'Average Student Attendance',
-        'ISAT Exceeding Reading %', 'Community Area Name',
+        'ISAT Exceeding Reading % ', 'Community Area Name',
         'Community Area Number', 'Latitude', 'Longitude', 'Ward'
     ]
     df_cleaned = df[cols].copy()
 
     # Drop rows with missing critical values
-    df_cleaned = df_cleaned.dropna(subset=['Safety Score', 'Average Student Attendance', 'ISAT Exceeding Reading %'])
+    df_cleaned = df_cleaned.dropna(subset=['Safety Score', 'Average Student Attendance', 'ISAT Exceeding Reading % '])
 
     # Standardize column names
     df_cleaned.columns = (

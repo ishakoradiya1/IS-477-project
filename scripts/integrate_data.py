@@ -39,3 +39,4 @@ def merge_datasets(schools_path="../data/processed/schools_cleaned.csv",
 
 if __name__ == "__main__":
     merge_datasets()
+
