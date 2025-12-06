@@ -1,4 +1,7 @@
+data/
 data/processed/
 figures/
 checksums.txt
 data/raw/
+__pycache__/
+.DS_Store
