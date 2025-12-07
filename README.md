@@ -1,12 +1,13 @@
 # IS-477-project
 ## Exploring the Relationship Between School Performance and Neighborhood Crime in Chicago
 
+
 ## Contributors (Bulleted list of contributors (with optional ORCIDs))
 * Isha Koradiya
 * Amritha Barani 
 
 # Summary: [500-1000 words] Description of your project, motivation, research question(s), and any findings.
-This project investigates the relationship between Chicago public school performance indicators, such as safety score, reading performance, attendance, and neighborhood crime patterns. Our motivation stems from the idea that school environments are heavily impacted by surrounding neighborhood conditions, particularly crime levels, which could influence perceived safety, educational outcomes, and student engagement. Understanding this relationship is valuable for policymakers, educators, and city planners aiming to improve community well-being. We analyze two publicly available datasets from the Chicago Open Data Portal:
+This project investigates the relationship between Chicago public school performance indicators, such as safety score, reading performance, attendance, and neighborhood crime patterns. Specifically we are looking at how school attendance and academic performance relate to crime patterns in surrounding neighborhoods, and how perceived school safety correlate with local crime rates? Our motivation stems from the idea that school environments are heavily impacted by surrounding neighborhood conditions, particularly crime levels, which could influence perceived safety, educational outcomes, and student engagement. Understanding this relationship is valuable for policymakers, educators, and city planners aiming to improve community well-being. We analyze two publicly available datasets from the Chicago Open Data Portal:
 1. Chicago Public Schools – Progress Report Cards (2011–2012)
 2. Crimes – 2001 to Present (filtered to 2011)
 
@@ -18,12 +19,62 @@ Our analyses reveal meaningful relationships. Safety Score shows a moderately ne
 
 All data processing and analysis steps are fully automated through a single script (run_workflow.py) to support reproducibility. This project demonstrates the complete data lifecycle and highlights the importance of transparent and well documented data practices.
 
-# Data profile: [500-1000 words] Description of each dataset used including all ethical/legal constraints.
-# Data quality: [500-1000 words] Summary of the quality assessment and findings.
-# Findings: [~500 words] Description of any findings including numeric results and/or visualizations.
-# Future work: [~500-1000 words] Brief discussion of any lessons learned and potential future work.
-# Reproducing: Sequence of steps required for someone else to reproduce your results.
-# References: Formatted citations for any papers, datasets, or software used in your project.
+## Data profile: [500-1000 words] Description of each dataset used including all ethical/legal constraints.
+also add --> Documentation describing steps someone else would use to acquire data, including checksums. This is particularly important if your data cannot be redistributed. (Where each dataset comes from, the URLs (you already have them), any licensing/ethical info, the fact your workflow uses programmatic acquisition, explanation of SHA-256 checksums and why they matter, how someone would normally download the data manually if needed)
+
+Licensing:
+The datasets used in this project are provided by the City of Chicago Data Portal and are subject to the Chicago Data Portal Terms of Use, which allow reuse for research and educational purposes. All software written for this project ... ADD TO THIS 
+
+## Data quality: [500-1000 words] Summary of the quality assessment and findings.
+also add --> documentation for filesystem structure/organization: How data directory is organized, raw / processed / integrated datasets look like, why we chose CSV + folders rather than a database
+add --> documentation for data integration: how we aggregated crime by Ward, why Ward was chosen as the key instead of original lat/long plan, why we chose left join, verification steps (row counts, summaries etc)
+then, naming conventions and consistency cleaning, and then quality assessment + findings.
+
+## Findings: [~500 words] Description of any findings including numeric results and/or visualizations.
+also add --> data viz and analysis documentation
+plots generated, methods used (count plot, scatter plot, boxplot, OLS regression, correlations, grouped correlations), why we chose these methods, patterns or statistical results were observed and what this all means
+
+## Future work: [~500-1000 words] Brief discussion of any lessons learned and potential future work.
+
+## Reproducing: Sequence of steps required for someone else to reproduce your results.
+**Workflow overview**
+This project uses a scripted end-to-end workflow to ensure full reproducibility. The workflow consists of four stages, each handled by a specific Python script:
+
+1. Data Acquisition/Collection (acquire_data.py)
+Downloads the raw Chicago Schools and Crime datasets automatically using stable public URLs, verifies integrity with SHA-256 checksums, and stores the files in data/raw/.
+2. Data Cleaning/Profiling (clean_data.py)
+Loads the raw datasets, selects relevant variables, handles missing values, standardizes column names, and outputs cleaned datasets into data/processed/.
+3. Data Integration (integrate_data.py)
+Aggregates crime counts by ward and merges them with the cleaned school dataset, producing a unified dataset (merged_school_crime.csv).
+4. Analysis + Visualization (analyze_data.py)
+Generates all figures, statistical summaries, and text outputs, saving them into the figures/ directory.
+
+**Reproducibility and transparency**
+To reproduce these results you have to clone the GitHub repository: git clone https://github.com/ishakoradiya1/IS-477-project
+
+1. Install dependencies using requirements.txt
+* pip install -r requirements.txt
+2. Run the full workflow using:
+* python3 scripts/run_workflow.py
+3. Running the full workflow will:
+    * Download the raw Chicago Schools and Chicago Crime datasets automatically using the URLs in acquire_data.py
+        * Schools: https://data.cityofchicago.org/api/views/9xs2-f89t/rows.csv
+        * Crimes: https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?where=year=2011
+    * Clean the datasets (clean_data.py)
+    * Integrate the datasets (integrate_data.py)
+    * Generate all final processed data and visualizations (analyze_data.py)
+All generated outputs will appear in:
+* data/processed/
+* figures/
+* checksums.txt (project root)
+
+Optional: accessing output data archive - download all processed datasets and figures from: (https://uofi.box.com/s/56t7ofh4sb2nhkaifiojl3k1q9zkqd39) and place them in the project directory exactly as:
+* data/processed/ (place all processed CSVs here)
+* figures/ (place all PNG's + textoutputs here)
+* checksums.txt (place in project root directory) 
+These files match what the workflow will generate.
+
+## References: Formatted citations for any papers, datasets, or software used in your project.
 
 Box link to output data: https://uofi.box.com/s/56t7ofh4sb2nhkaifiojl3k1q9zkqd39
 
