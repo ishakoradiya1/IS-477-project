@@ -53,9 +53,9 @@ Generates all figures, statistical summaries, and text outputs, saving them into
 To reproduce these results you have to clone the GitHub repository: git clone https://github.com/ishakoradiya1/IS-477-project
 
 1. Install dependencies using requirements.txt
-* pip install -r requirements.txt
+    * pip install -r requirements.txt
 2. Run the full workflow using:
-* python3 scripts/run_workflow.py
+    * python3 scripts/run_workflow.py
 3. Running the full workflow will:
     * Download the raw Chicago Schools and Chicago Crime datasets automatically using the URLs in acquire_data.py
         * Schools: https://data.cityofchicago.org/api/views/9xs2-f89t/rows.csv
@@ -63,6 +63,7 @@ To reproduce these results you have to clone the GitHub repository: git clone ht
     * Clean the datasets (clean_data.py)
     * Integrate the datasets (integrate_data.py)
     * Generate all final processed data and visualizations (analyze_data.py)
+
 All generated outputs will appear in:
 * data/processed/
 * figures/
