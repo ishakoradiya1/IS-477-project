@@ -37,6 +37,8 @@ plots generated, methods used (count plot, scatter plot, boxplot, OLS regression
 ## Future work: [~500-1000 words] Brief discussion of any lessons learned and potential future work.
 
 ## Reproducing
+**Workflow Overview**
+
 This project uses a scripted end-to-end workflow to ensure full reproducibility. The workflow consists of four stages, each handled by a specific Python script:
 
 1. Data Acquisition/Collection (acquire_data.py)
@@ -48,7 +50,8 @@ Aggregates crime counts by ward and merges them with the cleaned school dataset,
 4. Analysis + Visualization (analyze_data.py)
 Generates all figures, statistical summaries, and text outputs, saving them into the figures/ directory.
 
-**Reproducibility and transparency**
+**Reproducibility and Transparency**
+
 To reproduce these results you have to clone the GitHub repository: git clone https://github.com/ishakoradiya1/IS-477-project
 
 1. Install dependencies using requirements.txt
