@@ -1,12 +1,9 @@
 # IS-477-project
 ## Exploring the Relationship Between School Performance and Neighborhood Crime in Chicago
 
-## Contributors 
+## Contributors (Bulleted list of contributors (with optional ORCIDs))
 * Isha Koradiya
 * Amritha Barani 
-
-* Title: Title of your project
-* Contributors: Bulleted list of contributors (with optional ORCIDs).
 
 # Summary: [500-1000 words] Description of your project, motivation, research question(s), and any findings.
 This project investigates the relationship between Chicago public school performance indicators, such as safety score, reading performance, attendance, and neighborhood crime patterns. Our motivation stems from the idea that school environments are heavily impacted by surrounding neighborhood conditions, particularly crime levels, which could influence perceived safety, educational outcomes, and student engagement. Understanding this relationship is valuable for policymakers, educators, and city planners aiming to improve community well-being. We analyze two publicly available datasets from the Chicago Open Data Portal:
