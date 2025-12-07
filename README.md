@@ -36,8 +36,7 @@ plots generated, methods used (count plot, scatter plot, boxplot, OLS regression
 
 ## Future work: [~500-1000 words] Brief discussion of any lessons learned and potential future work.
 
-## Reproducing: Sequence of steps required for someone else to reproduce your results.
-**Workflow overview**
+## Reproducing:
 This project uses a scripted end-to-end workflow to ensure full reproducibility. The workflow consists of four stages, each handled by a specific Python script:
 
 1. Data Acquisition/Collection (acquire_data.py)
