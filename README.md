@@ -2,11 +2,11 @@
 ## Exploring the Relationship Between School Performance and Neighborhood Crime in Chicago
 
 
-## Contributors (Bulleted list of contributors (with optional ORCIDs))
+## Contributors
 * Isha Koradiya
 * Amritha Barani 
 
-# Summary: [500-1000 words] Description of your project, motivation, research question(s), and any findings.
+## Summary
 This project investigates the relationship between Chicago public school performance indicators, such as safety score, reading performance, attendance, and neighborhood crime patterns. Specifically we are looking at how school attendance and academic performance relate to crime patterns in surrounding neighborhoods, and how perceived school safety correlate with local crime rates? Our motivation stems from the idea that school environments are heavily impacted by surrounding neighborhood conditions, particularly crime levels, which could influence perceived safety, educational outcomes, and student engagement. Understanding this relationship is valuable for policymakers, educators, and city planners aiming to improve community well-being. We analyze two publicly available datasets from the Chicago Open Data Portal:
 1. Chicago Public Schools – Progress Report Cards (2011–2012)
 2. Crimes – 2001 to Present (filtered to 2011)
