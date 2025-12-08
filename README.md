@@ -94,14 +94,17 @@ Optional: accessing output data archive - download all processed datasets and fi
 These files match what the workflow will generate.
 
 ## References: Formatted citations for any papers, datasets, or software used in your project.
-
-Box link to output data: https://uofi.box.com/s/56t7ofh4sb2nhkaifiojl3k1q9zkqd39
-
-Last things to add:
-Licenses for data and software created as part of your project
-
-Final artifact to add:
-Metadata and data documentation 
-Data dictionary or codebook as text file, PDF, or self-describing data formats.
-Descriptive metadata describing your project in conformance with a standard such as DataCite, Schema.org.
-
+* Barani, Amrtiha & Koradiya, Isha. IS-477 Final Project Repository. GitHub, 2025.
+https://github.com/ishakoradiya1/IS-477-project
+* City of Chicago. Chicago Public Schools – School Data. Chicago Data Portal, 2025.
+https://data.cityofchicago.org/api/views/9xs2-f89t (Accessed December 2025)
+* City of Chicago. Crimes – 2001 to Present (Filtered to 2011). Chicago Data Portal, 2025.
+https://data.cityofchicago.org/api/views/ijzp-q8t2 (Accessed December 2025)
+* Matplotlib A 2D Graphics Environment. https://matplotlib.org/
+* Microsoft. Visual Studio Code.
+https://code.visualstudio.com/
+* NumPy. https://numpy.org/
+* Python Data Analysis Library. https://pandas.pydata.org/
+* Seaborn Statistical Data Visualization. https://seaborn.pydata.org/
+* Statsmodels: Statistical Modeling in Python. https://www.statsmodels.org/
+* Requests. https://requests.readthedocs.io/
