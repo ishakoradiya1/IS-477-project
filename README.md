@@ -60,16 +60,12 @@ Another future step to consider is to incorporate data spanning a longer time pe
 ## Reproducing
 **Workflow Overview**
 
-This project uses a scripted end-to-end workflow to ensure full reproducibility. The workflow consists of four stages, each handled by a specific Python script:
+This project uses a scripted end to end workflow to ensure full reproducibility. The workflow stages are each handled by a specific Python script:
 
-1. Data Acquisition/Collection (acquire_data.py)
-Downloads the raw Chicago Schools and Crime datasets automatically using stable public URLs, verifies integrity with SHA-256 checksums, and stores the files in data/raw/.
-2. Data Cleaning/Profiling (clean_data.py)
-Loads the raw datasets, selects relevant variables, handles missing values, standardizes column names, and outputs cleaned datasets into data/processed/.
-3. Data Integration (integrate_data.py)
-Aggregates crime counts by ward and merges them with the cleaned school dataset, producing a unified dataset (merged_school_crime.csv).
-4. Analysis + Visualization (analyze_data.py)
-Generates all figures, statistical summaries, and text outputs, saving them into the figures/ directory.
+1. Data Acquisition/Collection (acquire_data.py): Downloads the raw Chicago Schools and Crime datasets automatically using public URLs, verifies integrity with SHA-256 checksums, and stores the files in data/raw/.
+2. Data Cleaning/Profiling (clean_data.py): Loads the raw datasets, selects relevant variables, handles missing values, standardizes column names, and outputs cleaned datasets into data/processed/.
+3. Data Integration (integrate_data.py): Aggregates crime counts by ward and merges them with the cleaned school dataset, producing a merged dataset (merged_school_crime.csv).
+4. Analysis + Visualization (analyze_data.py): Generates all figures, statistical summaries, and text outputs, saving them into the figures/ directory.
 
 **Reproducibility and Transparency**
 
