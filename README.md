@@ -17,7 +17,7 @@ Our analyses revealed meaningful relationships between the data. Safety Score sh
 
 All data processing and analysis steps are fully automated through a single script (run_workflow.py) to support reproducibility. This project demonstrates the complete data lifecycle and highlights the importance of transparent and well-documented data practices.
 
-## Data profile: [500-1000 words] Description of each dataset used including all ethical/legal constraints.
+## Data profile:
 **Dataset Descriptions**
 
 This project uses two public datasets retrieved from the City of Chicago Data Portal. The first dataset, Chicago Public Schools - Progress Report Cards (2011-2012), provides all school-level performance data used to create CPS School Report Cards for the 2011-2012 school year. It contains data for 566 elementary, middle, and high schools and is important for our analysis because it contains data on safety scores and attendance rates. The second source is the Crimes - 2001 to Present dataset. For our analysis, we cleaned this dataset to only include data from the year 2011, which allowed us to align crime incidents with the academic year included in the first dataset. Both datasets were accessed with the Socrata Open Data API.
@@ -28,19 +28,17 @@ Both datasets are under the City of Chicago Data Portal Terms of Use, which stat
 
 **Data Acquisition and Integrity**
 
+To make sure the project is reproducible, we created an automated data download process in acquire_data.py. This script pulls the CSV files from the Chicago Data Portal API and puts them in the data/raw folder. While doing this, we also generate SHA-256 checksums with the hashlib library. These checksums are similar to unique identifiers that allow us to verify that the files were downloaded correctly and have not been altered. We store the checksum values in checksums.txt, so that anyone can verify that their data is the same as ours. While our main method uses automated Python scripts, the files can be downloaded locally by any person if necessary. A user can simply navigate to the links for the Chicago Data Portal, select the crime data for 2011 only, and download both datasets as CSV. The manually downloaded files need to be named chicago_schools.csv and crimes_2011.csv and saved in the data/raw folder. By having both automated and manual methods it makes sure the project will still work even if there is no access to the ​‍​‌‍​‍‌​‍​‌‍​‍‌API.
+
 **Licensing**
 
 The datasets used in this project are provided by the City of Chicago Data Portal and are subject to the Chicago Data Portal Terms of Use, which allow reuse for research and educational purposes. We acknowledge the City of Chicago as the originator of the data used. All software written for this project is released under the MIT License. This permissive software license allows others to modify and copy our analysis for any future research, as long as the original contributors are credited. 
-
-
-
-also add --> Documentation describing steps someone else would use to acquire data, including checksums. This is particularly important if your data cannot be redistributed. (Where each dataset comes from, the URLs (you already have them), any licensing/ethical info, the fact your workflow uses programmatic acquisition, explanation of SHA-256 checksums and why they matter, how someone would normally download the data manually if needed)
 
 ## Data quality
 
 **Filesystem Organization**
 
-Our project required a structured approach to storing, cleaning, and assessing the quality of the datasets. To support future reproducibility, we used a consistent filesystem organization that seperates raw, processed, and merged data. The raw dataset was downloaded directly from a Chicago Data Portal and chose a simple folder based CSV structure rather than a relational database because our cleaning and integration steps were straightfroward enought to be performed using pandas. This filesystem layout also supports automated workflows using our run_workflow script, which relies on predictable file paths. 
+Our project required a structured approach to storing, cleaning, and assessing the quality of the datasets. To support future reproducibility, we used a consistent filesystem organization that separates raw, processed, and merged data. The raw dataset was downloaded directly from a Chicago Data Portal and chose a simple folder based CSV structure rather than a relational database because our cleaning and integration steps were straightfroward enought to be performed using pandas. This filesystem layout also supports automated workflows using our run_workflow script, which relies on predictable file paths. 
 
 **Quality assessment and Findings**
 
