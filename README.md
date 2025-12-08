@@ -93,7 +93,7 @@ Optional: accessing output data archive - download all processed datasets and fi
 * checksums.txt (place in project root directory) 
 These files match what the workflow will generate.
 
-## References: Formatted citations for any papers, datasets, or software used in your project.
+## References
 * Barani, Amrtiha & Koradiya, Isha. IS-477 Final Project Repository. GitHub, 2025.
 https://github.com/ishakoradiya1/IS-477-project
 * City of Chicago. Chicago Public Schools – School Data. Chicago Data Portal, 2025.
