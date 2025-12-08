@@ -17,10 +17,10 @@ Our analyses revealed meaningful relationships between the data. Safety Score sh
 
 All data processing and analysis steps are fully automated through a single script (run_workflow.py) to support reproducibility. This project demonstrates the complete data lifecycle and highlights the importance of transparent and well-documented data practices.
 
-## Data profile:
+## Data profile
 **Dataset Descriptions**
 
-This project uses two public datasets retrieved from the City of Chicago Data Portal. The first dataset, Chicago Public Schools - Progress Report Cards (2011-2012), provides all school-level performance data used to create CPS School Report Cards for the 2011-2012 school year. It contains data for 566 elementary, middle, and high schools and is important for our analysis because it contains data on safety scores and attendance rates. The second source is the Crimes - 2001 to Present dataset. For our analysis, we cleaned this dataset to only include data from the year 2011, which allowed us to align crime incidents with the academic year included in the first dataset. Both datasets were accessed with the Socrata Open Data API.
+This project uses two public datasets retrieved from the City of Chicago Data Portal. The first dataset, Chicago Public Schools - Progress Report Cards (2011-2012), provides all school-level performance data used to create CPS School Report Cards for the 2011-2012 school year. It contains data for 566 elementary, middle, and high schools and is important for our analysis because it contains data on safety scores and attendance rates. The second source is the Crimes - 2001 to Present dataset. For our analysis, we cleaned this dataset to only include data from the year 2011, which allowed us to align crime incidents with the academic year included in the first dataset.
 
 **Ethical and Legal Constraints**
 
