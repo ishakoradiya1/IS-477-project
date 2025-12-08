@@ -15,13 +15,23 @@ These datasets contains supporting information such as school characteristics an
 
 Our analyses revealed meaningful relationships between the data. Safety Score shows a moderately negative correlation with neighborhood crime count. OLS regression confirms crime count as a statistically significant predictor of Safety Score and reading performance also tends to decrease as crime increases, though the relationship is weaker. Average student attendance shows a negative correlation with crime as well, suggesting neighborhood conditions may influence school engagement. We also observe that these relationships vary by school type.
 
-All data processing and analysis steps are fully automated through a single script (run_workflow.py) to support reproducibility. This project demonstrates the complete data lifecycle and highlights the importance of transparent and well documented data practices.
+All data processing and analysis steps are fully automated through a single script (run_workflow.py) to support reproducibility. This project demonstrates the complete data lifecycle and highlights the importance of transparent and well-documented data practices.
 
 ## Data profile: [500-1000 words] Description of each dataset used including all ethical/legal constraints.
-also add --> Documentation describing steps someone else would use to acquire data, including checksums. This is particularly important if your data cannot be redistributed. (Where each dataset comes from, the URLs (you already have them), any licensing/ethical info, the fact your workflow uses programmatic acquisition, explanation of SHA-256 checksums and why they matter, how someone would normally download the data manually if needed)
+**Dataset Descriptions**
+This project uses two public datasets retrieved from the City of Chicago Data Portal. The first dataset, Chicago Public Schools - Progress Report Cards (2011-2012), provides all school-level performance data used to create CPS School Report Cards for the 2011-2012 school year. It contains data for 566 elementary, middle, and high schools and is important for our analysis because it contains data on safety scores and attendance rates. The second source is the Crimes - 2001 to Present dataset. For our analysis, we cleaned this dataset to only include data from the year 2011, which allowed us to align crime incidents with the academic year included in the first dataset. Both datasets were accessed with the Socrata Open Data API.
 
-Licensing:
-The datasets used in this project are provided by the City of Chicago Data Portal and are subject to the Chicago Data Portal Terms of Use, which allow reuse for research and educational purposes. All software written for this project ... ADD TO THIS 
+**Ethical and Legal Constraints**
+Both datasets are under the City of Chicago Data Portal Terms of Use, which states that the City of Chicago voluntarily provides the data as a service to the public. Additionally, the city is free to ask a user of the data to delete any display, distribution, or use of the website's data if the Terms of Use are violated. The crime records data is provided by the Chicago Police Department and does not include specific household identifiers. Instead, it partially redacts the address where the incident occurred by including the block instead of the full address. This helps protect the privacy of victims and neighborhood residents. The Progress Report Cards data is provided by Chicago Public Schools. This dataset does not include any Personally Identifiable Information, as the dataset is represented by each school and the school performances are averages. This project complies with research ethics regarding the protection of sensitive student populations.
+
+**Data Acquisition and Integrity**
+
+**Licensing**
+The datasets used in this project are provided by the City of Chicago Data Portal and are subject to the Chicago Data Portal Terms of Use, which allow reuse for research and educational purposes. We acknowledge the City of Chicago as the originator of the data used. All software written for this project is released under the MIT License. This permissive software license allows others to modify and copy our analysis for any future research, as long as the original contributors are credited. 
+
+
+
+also add --> Documentation describing steps someone else would use to acquire data, including checksums. This is particularly important if your data cannot be redistributed. (Where each dataset comes from, the URLs (you already have them), any licensing/ethical info, the fact your workflow uses programmatic acquisition, explanation of SHA-256 checksums and why they matter, how someone would normally download the data manually if needed)
 
 ## Data quality
 
