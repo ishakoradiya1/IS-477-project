@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Chicago School Performance and Ward-Level Crime Analysis",
+  "description": "Integration of Chicago Public Schools progress reports with city crime data to explore the link between academic performance and neighborhood safety.",
+  "creator": [
+    { "@type": "Person", "name": "Amritha Barani" },
+    { "@type": "Person", "name": "Isha Koradiya" }
+  ],
+  "license": "https://opensource.org/licenses/MIT",
+  "temporalCoverage": "2011/2012",
+  "keywords": ["Chicago", "Education", "Public Safety", "Ward Data"]
+}
